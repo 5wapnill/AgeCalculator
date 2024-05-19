@@ -1,0 +1,21 @@
+body{
+    padding:20px;
+  }
+  h1{
+    font-size: 5em;
+  }
+  .mcont{
+    display: flex;
+    justify-content:space-evenly;
+  }
+  .cont{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:15px;
+    background-color:lightgray;
+    border-bottom: 8px solid black;
+    width: 150px;
+    height:150px;
+  }
+  
