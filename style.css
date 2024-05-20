@@ -37,6 +37,7 @@ input {
   background-color: #FFFFFF;
   border-radius: 15px;
   font-size: 50px;
+  color: #5c5656;
 }
 
 input:focus{
@@ -47,6 +48,7 @@ input:focus{
 
 ::placeholder {
   font-size: 40px;
+  color: #767676;
 }
 
 button {
