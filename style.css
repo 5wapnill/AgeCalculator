@@ -36,9 +36,16 @@ input {
   border: none;
   background-color: #FFFFFF;
   border-radius: 15px;
+  font-size: 50px;
 }
 
-::placeholder { 
+input:focus{
+  outline: none;
+  background-color: #fff7f7;
+
+}
+
+::placeholder {
   font-size: 40px;
 }
 
