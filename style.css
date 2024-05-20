@@ -57,7 +57,7 @@ button {
 }
 
 .circle {
-  position: absolute;
+  position: fixed;
   width: 1321px;
   height: 1321px;
   left: 594px;
