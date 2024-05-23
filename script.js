@@ -5,9 +5,6 @@ const year = document.getElementById("year").value;
 
 const tDate = new Date;
 
-
-
-
 function Date()
 {
     console.log(`${day} ${month} ${year}`);
