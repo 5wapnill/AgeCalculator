@@ -51,7 +51,7 @@ input:focus{
   color: #767676;
 }
 
-button {
+.button {
   position: absolute;
   left: 50%;
   top: 80%;
