@@ -46,12 +46,18 @@ input:focus{
 
 }
 
+input[type=number] { 
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0; 
+}
+
 ::placeholder {
   font-size: 40px;
   color: #767676;
 }
 
-button {
+.button {
   position: absolute;
   left: 50%;
   top: 80%;
