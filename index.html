@@ -2,27 +2,18 @@
 <head>
     <title>AgeCalculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <h1>Age<br>Calculator</h1>
-    <div class="mcont">
-        <div class="cont">
-            <input type="text" name="day" id="day" placeholder="Day">
-        </div>
-        <div class="cont">
-            <input type="text" name="month" id="month" placeholder="Month">
-
-        </div>
-        <div class="cont">
-            <input type="text" name="year" id="year" placeholder="Year">
-        </div>
-    </div>
-    <input type="button" class="button" value="Calculate" onclick="Date()"></input>
-    <div class="circle">
-        
-    </div>
+    <form action="" class="mcont">
+        <input type="number" class="cont" name="day" id="day" placeholder="day">
+        <input type="text" class="cont" name="month" id="month" placeholder="Month">
+        <input type="text" class="cont" name="year" id="year" placeholder="Year">
+        <input type="button" class="button" value="Calculate" onclick="more()"></input>
+    </form>
+    <div class="circle"></div>
 </body>
 
 </html>
