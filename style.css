@@ -6,6 +6,19 @@ body {
   padding-left: 20px;
   background-color: #FFFFFF;
 }
+#contx{
+  width: 100%;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100vw;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100vw;
+}
 
 h1 {
   font-size: 128px;
@@ -58,10 +71,10 @@ input[type=number] {
 }
 
 .button {
-  position: absolute;
+  /* position: absolute;
   left: 50%;
   top: 80%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%); */
   height: 100px;
   width: 400px;
   font-size: 50px;
