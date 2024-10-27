@@ -13,6 +13,8 @@ function more() {
     validation(day, month, year, tDate);
     nyear(year, tDate);
     nmonth(month, tDate);
+    nday(day,tDate)
+
 }
 
 function validation(day, month, year, tDate) {
@@ -45,5 +47,12 @@ function nmonth(month, tDate) {
     console.log(dmonth);
     document.getElementById("dmonth").innerHTML = dmonth;
 
+}
+
+function nday(day, tDate){
+    console.log("nday called");
+
+    let dday = tDate.getday();
+    document.getElementById("dday").innerHTML = dday; 
 }
 
