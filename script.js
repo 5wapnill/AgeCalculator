@@ -11,9 +11,50 @@ function get()
     const presentMonth = new Date().getMonth();
     const presentYear = new Date().getFullYear();
     console.log(presentDate, presentMonth, presentYear);
+
+    validation(day,month,year,presentYear);
+    birthYears(year,presentYear);
+    birthMonths(month, presentMonth);
+    birthDates(day, presentDate);
+
 }
 
+function validation(day, month, year, presentYear) {
 
+    if (
+        !((day <= 31 && day >= 1 && day != null)
+            &&
+            (month <= 12 && month >= 1 && month != null)
+            &&
+            (year <= presentYear && year >= 0 && year != null))) {
+        alert("Please enter valid date !");
+    }
+}
+
+function birthYears(year, presentYear) {
+    console.log("nyear called");
+
+
+    let birthYear = presentYear - year;
+    console.log(birthYear);
+    document.getElementById("dyear").innerHTML = birthYear + " years";
+
+}
+
+function birthMonths(month, presentMonth) {
+
+    let birthMonth = presentMonth - month;
+    console.log(birthMonth);
+    document.getElementById("dmonth").innerHTML = Math.abs(birthMonth) + " months";
+
+}
+
+function birthDates(day, presentDate) {
+
+    let birthDate = presentDate - day;
+    console.log(birthDate);
+    document.getElementById("ddate").innerHTML = Math.abs(birthDate) + " days";
+}
 
 
 // function get() {
