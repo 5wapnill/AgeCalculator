@@ -1,23 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+    let btn = document.querySelector(".button");
+    btn.addEventListener("click",() => {
+        const day = document.getElementById('day').value;
+        const month = document.getElementById('month').value;
+        const year = document.getElementById('year').value;
+        console.log(day, month, year);
+
+        let present = new Date;
+        const presentDate = present.getDate();
+        const presentMonth = present.getMonth();
+        const presentYear = present.getFullYear();
+        console.log(presentDate, presentMonth, presentYear);
+    
+        validation(day,month,year,presentYear);
+        birthYears(year,presentYear);
+        birthMonths(month, presentMonth);
+        birthDates(day, presentDate);
+    })
+})
 
 
-function get()
-{
-    const day = document.getElementById('day').value;
-    const month = document.getElementById('month').value;
-    const year = document.getElementById('year').value;
-    console.log(day, month, year);
-
-    const presentDate = new Date().getDate();
-    const presentMonth = new Date().getMonth();
-    const presentYear = new Date().getFullYear();
-    console.log(presentDate, presentMonth, presentYear);
-
-    validation(day,month,year,presentYear);
-    birthYears(year,presentYear);
-    birthMonths(month, presentMonth);
-    birthDates(day, presentDate);
-
-}
 
 function validation(day, month, year, presentYear) {
 
@@ -43,7 +45,7 @@ function birthYears(year, presentYear) {
 
 function birthMonths(month, presentMonth) {
 
-    let birthMonth = presentMonth - month;
+    let birthMonth = presentMonth - month + 1;
     console.log(birthMonth);
     document.getElementById("dmonth").innerHTML = Math.abs(birthMonth) + " months";
 
