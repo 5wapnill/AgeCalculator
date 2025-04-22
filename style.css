@@ -82,7 +82,8 @@ input {
   border-radius: 15px;
   font-size: var(--font-size-large);
   color: var(--primary-color);
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
+  caret-color: transparent;
 }
 
 /* Remove spinners for Chrome, Safari, Edge, Opera */
@@ -137,8 +138,8 @@ input:focus {
 
 .ansContainer {
   background-color: var(--background-color);
-  width: 90%;
-  height: 90%;
+  width: 50%;
+  height: 50%;
   border-radius: 15px;
   position: fixed;
   display: flex;

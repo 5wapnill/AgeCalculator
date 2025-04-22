@@ -37,23 +37,29 @@ function calculateAge() {
     let months = currentMonth - month;
     let days = currentDay - day;
 
-    // Adjust for negative days
+    // Adjust for dates
+    if (currentMonth < month || (currentMonth === month && currentDay < day)) {
+        years--;
+        months = 12 + currentMonth - month;
+        
+        if (currentDay < day) {
+            months--;
+            const lastMonth = new Date(currentYear, currentMonth - 1, 0);
+            days = lastMonth.getDate() - day + currentDay;
+        }
+    }
+
+    // Adjust for remaining negative days
     if (days < 0) {
         months--;
         const lastMonth = new Date(currentYear, currentMonth - 1, 0);
         days += lastMonth.getDate();
     }
 
-    // Adjust for negative months
+    // Handle edge case for months
     if (months < 0) {
         years--;
         months += 12;
-    }
-
-    // Handle edge case when birth date hasn't occurred this year
-    if (month > currentMonth || (month === currentMonth && day > currentDay)) {
-        years--;
-        months = 11 - (month - currentMonth);
     }
 
     // Display results
