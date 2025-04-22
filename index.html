@@ -1,24 +1,30 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgeCalculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
-    <h1>Age<br>Calculator</h1>
-    <form action="" class="mcont">
-        <input type="number" class="cont" name="day" id="day" placeholder="day">
-        <input type="text" class="cont" name="month" id="month" placeholder="Month">
-        <input type="text" class="cont" name="year" id="year" placeholder="Year">
-        <input type="button" class="button" value="Calculate"></input>
-    </form>
-    <div class="circle"></div>
-    <div class="ansContainer">
-        <div id="dyear"></div>
-        <div id="dmonth"></div>
-        <div id="ddate"></div>
-    </div>
+    <main>
+        <h1>Age<br>Calculator</h1>
+        <form class="mcont">
+            <input type="number" class="cont" name="day" id="day" placeholder="Day" min="1" max="31" required>
+            <input type="number" class="cont" name="month" id="month" placeholder="Month" min="1" max="12" required>
+            <input type="number" class="cont" name="year" id="year" placeholder="Year" min="1900" required>
+        </form>
+        <button type="button" class="button">Calculate</button>
+        <div class="circle" aria-hidden="true"></div>
+        <div class="ansContainer hide" role="dialog" aria-label="Age Result">
+            <button id="x" aria-label="Close">×</button>
+            <p>You are</p>
+            <div id="dyear" aria-label="Years"></div>
+            <div id="dmonth" aria-label="Months"></div>
+            <div id="ddate" aria-label="Days"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
-
 </html>

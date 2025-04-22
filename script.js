@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function calculateAge() {
+    let ansContainer = document.querySelector('#ansContainer');
+    ansContainer.classList.toggle('hide');
     // Get input values and convert to numbers
     const day = parseInt(document.getElementById('day').value);
     const month = parseInt(document.getElementById('month').value);

@@ -1,82 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap');
 
+:root {
+  /* Colors */
+  --primary-color: #5c5656;
+  --secondary-color: #FEC7C7;
+  --background-color: #FFFFFF;
+  --hover-color: #fff7f7;
+  --text-color: #767676;
+  
+  /* Spacing */
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  
+  /* Typography */
+  --font-size-base: 16px;
+  --font-size-large: 50px;
+  --font-size-xl: 128px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sansita Swashed", sans-serif;
+}
+
 body {
-  padding: 20px;
-  font-family: "Sansita Swashed", system-ui;
-  padding-left: 20px;
-  background-color: #FFFFFF;
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 128px;
-  margin: 10px;
+  font-size: var(--font-size-xl);
+  margin: var(--spacing-sm);
+  text-align: center;
 }
 
 .mcont {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  gap: var(--spacing-md);
   margin-top: 60px;
+  place-items: center;
 }
 
 .cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  background-color: #FFFFFF;
-  border-bottom: 8px solid #FEC7C7;
   width: 150px;
   height: 150px;
+  border-radius: 15px;
+  background-color: var(--background-color);
+  border-bottom: 8px solid var(--secondary-color);
 }
 
 input {
-  text-align: center;
   width: 100%;
   height: 100%;
+  text-align: center;
   border: none;
-  background-color: #FFFFFF;
   border-radius: 15px;
-  font-size: 50px;
-  color: #5c5656;
+  font-size: var(--font-size-large);
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
 }
 
-input:focus{
+input:focus {
   outline: none;
-  background-color: #fff7f7;
-
+  background-color: var(--hover-color);
 }
 
-input[type=number] { 
+input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
-  margin: 0; 
 }
 
 ::placeholder {
   font-size: 40px;
-  color: #767676;
+  color: var(--text-color);
 }
 
 .button {
-  position: absolute;
-  left: 50%;
-  top: 80%;
-  transform: translate(-50%,-50%);
+  margin: var(--spacing-lg);
   height: 100px;
   width: 400px;
-  font-size: 50px;
-  background-color: #faefef;
+  font-size: var(--font-size-large);
+  background-color: var(--hover-color);
   border-radius: 15px;
   border: none;
-  border-bottom: 8px solid #ffbaba;
+  border-bottom: 8px solid var(--secondary-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 .circle {
   position: fixed;
   width: 1321px;
   height: 1321px;
-  left: 594px;
+  right: -400px;
   top: -553px;
   z-index: -1;
-  background: radial-gradient(50% 50% at 50% 50%, #FFBABA 0%, #FFFFFF 100%);
+  background: radial-gradient(50% 50% at 50% 50%, var(--secondary-color) 0%, var(--background-color) 100%);
+}
+
+.ansContainer {
+  background-color: var(--primary-color);
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+  color: var(--background-color);
+  font-size: var(--font-size-large);
+}
+
+.hide {
+  display: none;
+}
+
+#x {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: var(--spacing-md);
+  top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--background-color);
+  background-color: transparent;
+  border: 2px solid var(--background-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#x:hover {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: clamp(48px, 8vw, var(--font-size-xl));
+  }
+  
+  .mcont {
+    grid-template-columns: 1fr;
+  }
+  
+  .button {
+    width: 90%;
+    max-width: 400px;
+  }
 }
