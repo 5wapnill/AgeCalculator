@@ -1,26 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('main');
+    
     const btn = document.querySelector(".button");
     btn.addEventListener("click", calculateAge);
+    
+    let close = document.querySelector("#x");
+    close.addEventListener("click",()=>{
+        ansContainer.classList.toggle('hide');
+    main.classList.toggle('blur');
+
+    })
 });
 
 function calculateAge() {
-    let ansContainer = document.querySelector('#ansContainer');
-    ansContainer.classList.toggle('hide');
-    // Get input values and convert to numbers
     const day = parseInt(document.getElementById('day').value);
     const month = parseInt(document.getElementById('month').value);
     const year = parseInt(document.getElementById('year').value);
-
+    
     // Get current date
     const today = new Date();
     const currentYear = today.getFullYear();
     const currentMonth = today.getMonth() + 1;
     const currentDay = today.getDate();
-
+    
     // Validate input
     if (!isValidDate(day, month, year, currentYear)) {
         return;
     }
+    
+    const main = document.querySelector('main');
+    ansContainer.classList.toggle('hide');
+    main.classList.toggle('blur');
 
     // Calculate age
     let years = currentYear - year;

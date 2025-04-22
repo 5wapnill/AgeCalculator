@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap');
+@font-face {
+  font-family: 'Sansita Swashed', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src: url('assets/font/SansitaSwashed-Regular.ttf') format('truetype');
+}
 
 :root {
   /* Colors */
@@ -24,6 +29,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Sansita Swashed", sans-serif;
+  /* outline: 1px solid; */
 }
 
 body {
@@ -35,6 +41,17 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+.blur{
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 h1 {
   font-size: var(--font-size-xl);
@@ -44,7 +61,7 @@ h1 {
 
 .mcont {
   display: grid;
-  grid-template-columns: repeat(3, 150px);
+  grid-template-columns: repeat(3, 200px);
   gap: var(--spacing-md);
   margin-top: 60px;
   place-items: center;
@@ -69,14 +86,22 @@ input {
   transition: background-color 0.3s ease;
 }
 
-input:focus {
-  outline: none;
-  background-color: var(--hover-color);
+/* Remove spinners for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+/* Remove spinners for Firefox */
 input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+  background-color: var(--hover-color);
 }
 
 ::placeholder {
@@ -112,7 +137,7 @@ input[type=number] {
 }
 
 .ansContainer {
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   width: 90%;
   height: 90%;
   border-radius: 15px;
@@ -122,7 +147,7 @@ input[type=number] {
   gap: var(--spacing-md);
   justify-content: center;
   align-items: center;
-  color: var(--background-color);
+  color: var(--primary-color);
   font-size: var(--font-size-large);
 }
 
@@ -139,17 +164,17 @@ input[type=number] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--background-color);
+  color: var(--secondary-color);
   background-color: transparent;
-  border: 2px solid var(--background-color);
+  border: 2px solid var(--secondary-color);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 #x:hover {
-  background-color: var(--background-color);
-  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--background-color);
 }
 
 @media screen and (max-width: 768px) {
