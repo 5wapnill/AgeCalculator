@@ -1,3 +1,20 @@
+// creating a noise layer as a background
+
+function setup(){
+    createCanvas(windowWidth, windowHeight);
+    noFill();
+    stroke(255);
+    strokeWeight(0.5)
+    let can = document.querySelector('canvas');
+    can.style.position = 'absolute'
+    can.style.zIndex = -1;
+    for(i=0;i<=200000;i++){
+        point(random(width), random(height));
+    }
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const main = document.querySelector('main');
     
